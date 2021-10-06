@@ -1,6 +1,8 @@
+import gzip
 import multiprocessing as mp
 import pathlib as pl
 import pickle
+import shutil
 
 import pandas as pd
 from smlm import config as smlm_config
@@ -24,6 +26,13 @@ helpers.assure_dir(result_dir_fig5)
 
 data_dir = pl.Path("data/")
 orte_dir = data_dir.joinpath("orte/")
+
+zipped_orte_paths = [path for path in orte_dir.glob(f"*.csv.gz")]
+
+for zipped_orte_path in zipped_orte_paths:
+    with gzip.open(zipped_orte_path, "rb") as zip_in:
+        with orte_dir.joinpath(zipped_orte_path.stem).open("wb") as csv_out:
+            shutil.copyfileobj(zip_in, csv_out)
 
 raw_orte_paths = [path for path in orte_dir.glob(f"*.csv")]
 labelling_csv_path = data_dir.joinpath("labelling.csv")
