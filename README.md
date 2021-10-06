@@ -1,7 +1,7 @@
 # Demo repository for the SMLM package
 
 ## Installation Guide for Linux
-1. open a Terminal 
+1. open a terminal 
 2. create a conda environment
    - `conda create -n voronoi_analysis python=3.9`
 3. activate the environment
@@ -29,7 +29,7 @@ computer.
 The demo repository also contains the notebooks used to create
 the plots in the paper. Due to filesize restrictions in github the
 data needed to reproduce them is not included but available upon
-reasonable request. For their use jupyter needs to be installed
+reasonable request. For their use, `jupyter` needs to be installed
 in the environment with the following command.
 ```bash
 conda install jupyter
