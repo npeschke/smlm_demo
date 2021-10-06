@@ -31,4 +31,6 @@ the plots in the paper. Due to filesize restrictions in github the
 data needed to reproduce them is not included but available upon
 reasonable request. For their use jupyter needs to be installed
 in the environment with the following command.
-`conda install jupyter`
+```bash
+conda install jupyter
+```
